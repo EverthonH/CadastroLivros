@@ -22,7 +22,10 @@ class LivroFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'titulo' =>$this->faker->word,
+            'autor' =>$this->faker->word,
+            'isbn' =>$this->faker->randomNumber(9, true),
+            'genero' =>$this->faker->word,
         ];
     }
 }
