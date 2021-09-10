@@ -19,6 +19,7 @@ class CreateLivrosTable extends Migration
             $table->string('autor');
             $table->integer('isbn');
             $table->string('genero');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
