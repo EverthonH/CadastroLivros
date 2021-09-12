@@ -23,5 +23,6 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
  Route::resource('livros', LivroController::class);
+ Route::post('/novo/livro', [LivroController::class, 'store'])->middleware('auth')->name('addlivro');
 
 require __DIR__.'/auth.php';

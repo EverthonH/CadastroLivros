@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Livro;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LivroController extends Controller
 {
@@ -35,7 +36,14 @@ class LivroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Livro::create([
+            'titulo' => $request->titulo,
+            'autor' => $request->autor,
+            'genero' => $request->genero,
+            'isbn' => $request->isbn,
+            'user_id' => Auth::user()->id,
+        ]);
+        return redirect('dashboard');
     }
 
     /**
