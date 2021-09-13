@@ -50,7 +50,7 @@
 							<div x-data="{modal_editar: false}">
 								<!--Ícone -->
 								<div  @click="modal_editar = true" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 border border-green-700 rounded mb-3 pl-2S">Editar</div>
-								<a href="" style="text-decoration: none;" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded">Excluir</a>
+								<a href="{{ route('delelivro', $livro)}}" style="text-decoration: none;" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded">Excluir</a>
 								<!-- MODAL de editar -->
 								<div class="fixed z-10 inset-0 overflow-y-auto" style="display: none;" x-show="modal_editar">
 									<div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
