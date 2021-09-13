@@ -22,7 +22,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/livro', function () {
+    return view('livros');
+})->middleware(['auth'])->name('livro');
  Route::resource('livros', LivroController::class);
  Route::post('/novo/livro', [LivroController::class, 'store'])->middleware('auth')->name('addlivro');
+ Route::put('/livro/{livro}/update', [LivroController::class, 'update'])->name('uplivro')->middleware('auth');
 
 require __DIR__.'/auth.php';

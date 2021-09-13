@@ -77,7 +77,13 @@ class LivroController extends Controller
      */
     public function update(Request $request, Livro $livro)
     {
-        //
+        $livro ->update([
+            'titulo' => $request->titulo,
+            'autor' => $request->autor,
+            'genero' => $request->genero,
+            'isbn' => $request->isbn,
+        ]);
+        return redirect('dashboard');
     }
 
     /**
