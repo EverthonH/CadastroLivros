@@ -26,7 +26,12 @@ Route::get('/livro', function () {
     return view('livros');
 })->middleware(['auth'])->name('livro');
  Route::resource('livros', LivroController::class);
- Route::post('/novo/livro', [LivroController::class, 'store'])->middleware('auth')->name('addlivro');
- Route::put('/livro/{livro}/update', [LivroController::class, 'update'])->name('uplivro')->middleware('auth');
+
+ Route::post('/novo/livro', [LivroController::class, 'store'])->middleware('auth')->name('addlivro'); //Rota para adicionar     
+
+ Route::put('/livro/{livro}/update', [LivroController::class, 'update'])->name('uplivro')->middleware('auth'); //Rota para Editar
+
+ Route::get('/livro/remover/{livro}', [LivroController::class, 'destroy'])->name('delelivro')->middleware('auth'); //Rota para Deletar
+ 
 
 require __DIR__.'/auth.php';
