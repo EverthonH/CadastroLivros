@@ -94,6 +94,7 @@ class LivroController extends Controller
      */
     public function destroy(Livro $livro)
     {
-        //
-    }
+        $livro ->delete();
+        return redirect('dashboard');
+        }
 }
